@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+  }
+  .card {
+    background: rgba(255,255,255,0.2);
+    padding: 25px;
+    width: 330px;
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    color: white;
+  }
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+  }
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  #loginBtn { background: #00e6ff; }
+  #courseBtn { background: #00e676; display: none; }
+</style>
+
+</head>
+<body>
+
+<div class="card">
+  <h2>Login</h2>
+
+  <input id="username" placeholder="Username">
+  <input id="password" type="password" placeholder="Password">
+
+  <button id="loginBtn" onclick="loginUser()">Login</button>
+
+  <!-- Course button (hidden by default) -->
+  <button id="courseBtn" onclick="window.location.href='course.html'">Go to Course</button>
+</div>
+
+<script>
+function loginUser() {
+    let savedUser = JSON.parse(localStorage.getItem("userData"));
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if (!savedUser) {
+        alert("No user registered!");
+        return;
+    }
+
+    if (username === savedUser.username && password === savedUser.password) {
+        alert("Login Successful!");
+
+        // Show the course button
+        document.getElementById("courseBtn").style.display = "block";
+        
+    } else {
+        alert("Incorrect Username or Password!");
+    }
+}
+</script>
+
+</body>
+</html>
