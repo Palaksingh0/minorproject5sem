@@ -1,0 +1,65 @@
+/* Full Page Layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: #fff;
+}
+
+/* Glassmorphic Container */
+.about-container {
+    width: 70%;
+    max-width: 700px;
+
+    background: rgba(255, 255, 255, 0.18);
+    padding: 40px;
+    border-radius: 20px;
+
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.30);
+
+    animation: fadeIn 0.9s ease-out;
+}
+
+/* Heading */
+.about-container h1 {
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Paragraphs */
+.about-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Tagline */
+.tagline {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #dff;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
